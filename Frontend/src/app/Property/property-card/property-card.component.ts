@@ -13,6 +13,7 @@ export class PropertyCardComponent {
     Id:0,
     Name:"",
     Type : "",
-    Price : 0
+    Price : 0,
+    SellRent: 0
   };
 }
