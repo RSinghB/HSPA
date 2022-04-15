@@ -45,4 +45,13 @@
     "Price":10000,
     "ImageName":"House_5",
     "SellRent":1
-  }]
+  },
+  {
+    "Id": 7,
+    "Name":"Test Hill",
+    "Type":"Flat",
+    "Price":10000,
+    "ImageName":"",
+    "SellRent":2
+  }
+]

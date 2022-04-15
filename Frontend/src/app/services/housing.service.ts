@@ -14,11 +14,13 @@ export class HousingService {
   getAllProperties(SellRent:number):Observable<IProperty[]> {
     return this.http.get("Data/properties.json").pipe(
       map(data => {
-        const jsonData = JSON.stringify(data);
-        const propertiesArray: Array<IProperty> = JSON.parse(jsonData);
+
+        // console.log("JSON Stringify:" + JSON.stringify(data));
+
+        const propertiesArray: Array<IProperty> = JSON.parse(JSON.stringify(data));
         const propertiesFilterArray: Array<IProperty> = [];
         propertiesArray.forEach(e => {
-          if(e.SellRent === SellRent){
+         if(e.SellRent === SellRent){
             propertiesFilterArray.push(e);
           }
         });

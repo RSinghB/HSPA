@@ -16,9 +16,11 @@ export class PropertyListComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   if(this.route.snapshot.url.toString()){
-     this.SellRent = 2;
-   }
+    if (this.route.snapshot.url.toString()) {
+      if (this.route.snapshot.url.toString() == "rent-property") {
+        this.SellRent = 2;
+      }
+    }
     this.housingService.getAllProperties(this.SellRent).subscribe((data) => {
       this.Properties = data;
     },

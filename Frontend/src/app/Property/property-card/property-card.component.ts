@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { IProperty } from "../IProperty.interface";
 
 @Component({
-  selector: 'app-propety-card',
+  selector: 'app-property-card',
   // template : `<h1>I am card component</h1>`,
   templateUrl: 'property-card.component.html',
   // styles:['h1 {font-weight: normal}']
