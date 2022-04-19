@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {Routes, RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import {PropertyCardComponent} from './Property/property-card/property-card.component';
@@ -15,6 +17,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
+import { AuthService } from './services/auth.service';
 
 const appRoutes : Routes=[
   {path:"", component:PropertyListComponent},
@@ -42,9 +45,11 @@ const appRoutes : Routes=[
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [HousingService,UserService,AlertifyService],
+  providers: [HousingService,UserService,AlertifyService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
