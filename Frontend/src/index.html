@@ -7,6 +7,22 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript">
+    let data;
+      fetch("Data/data.json")
+        .then(function (response) {
+          data = response.json().then(d=>{
+                          console.log(`${d.id} ${d.firstName} ${d.lastName}`);
+                          appendData(d.firstName);
+                        });
+        });
+
+    function appendData(data) {
+        let div = document.createElement("div");
+        div.setAttribute("id",data);
+        document.body.appendChild(div);
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>
